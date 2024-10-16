@@ -1,0 +1,13 @@
+.navbar-brand{
+    font-size: 25px;
+    font-weight: 600;
+    color: red;
+    padding-left: 10px;
+}
+.nav-link{
+    color: black;
+    font-size: 16px;
+}
+.dropdown:hover .dropdown-menu{
+    display: block;
+}
