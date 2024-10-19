@@ -5,7 +5,7 @@ import { AbstractControl, ValidatorFn } from '@angular/forms';
 import { FormBuilder, FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms'; import { RouterLink } from '@angular/router';
 @Component({
   selector: 'app-account-opening-form',
-  standalone: true, imports: [RouterLink, ReactiveFormsModule, JsonPipe, FormsModule],
+  standalone: true, imports: [RouterLink, ReactiveFormsModule, FormsModule],
   templateUrl: './account-opening-form.component.html',
   styleUrl: './account-opening-form.component.css'
 })
@@ -55,6 +55,7 @@ export class AccountOpeningFormComponent implements OnInit {
       "accountType": ""
     };
   http = inject(HttpClient); onSubmit() {
+    debugger;
     this.http.post("https://localhost:7093/api/Account/OpenAccount", this.openAccountObj).subscribe((res: any) => {
       debugger;
       if (res.result) {

@@ -1,6 +1,11 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\src",
+    "\\src\\app",
+    "\\src\\app\\components",
+    "\\src\\app\\components\\account-opening-form"
   ],
+  "SelectedNode": "\\src\\app\\components\\account-opening-form\\account-opening-form.component.ts",
   "PreviewInSolutionExplorer": false
 }
