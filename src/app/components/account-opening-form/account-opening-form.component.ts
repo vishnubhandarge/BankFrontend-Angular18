@@ -33,7 +33,7 @@ export class AccountOpeningFormComponent implements OnInit {
       accountType: ['', Validators.required]
     });
   }
-  ngOnInit(): void { } just: any;
+  ngOnInit(): void { }
   openAccountObj: any =
     {
       "firstName": "",
@@ -54,10 +54,9 @@ export class AccountOpeningFormComponent implements OnInit {
       "nomineeDOB": "",
       "accountType": ""
     };
-  http = inject(HttpClient); onSubmit() {
-    debugger;
+  http = inject(HttpClient); 
+  onSubmit() {
     this.http.post("https://localhost:7093/api/Account/OpenAccount", this.openAccountObj).subscribe((res: any) => {
-      debugger;
       if (res.result) {
         alert("Account opened successfullt");
       } else {

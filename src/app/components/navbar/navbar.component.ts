@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 @Component({
@@ -10,4 +10,10 @@ import { RouterLink } from '@angular/router';
 })
 export class NavbarComponent {
 
+  constructor(private elementRef: ElementRef) { }
+
+  toggleNavbar() {
+    const navbar = this.elementRef.nativeElement.querySelector('#navbarNav');
+    navbar.classList.toggle('collapse');
+  }
 }
