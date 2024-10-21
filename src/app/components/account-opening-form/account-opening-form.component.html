@@ -1,84 +1,100 @@
 <div class="container mt-5">
     <h2 class="mb-4">Online Bank Account Application</h2>
-    <form [formGroup]="accountForm">
+    <form [formGroup]="accountForm" (ngSubmit)="onSubmit()">
         <div class="row mb-3">
-            <div class="col-md-6"> <label for="firstName" class="form-label">First Name</label> <input type="text"
-                    [(ngModel)]="openAccountObj.firstName" formControlName="firstName" class="form-control"
-                    id="firstName" maxlength="50" required> </div>
-            <div class="col-md-6"> <label for="lastName" class="form-label">Last Name</label> <input type="text"
-                    [(ngModel)]="openAccountObj.lastName" formControlName="lastName" class="form-control" id="lastName"
-                    maxlength="50" required> </div>
+            <div class="col-md-6">
+                <label for="firstName" class="form-label">First Name</label>
+                <input type="text" formControlName="firstName" class="form-control" id="firstName" maxlength="50" >
+            </div>
+            <div class="col-md-6">
+                <label for="lastName" class="form-label">Last Name</label>
+                <input type="text" formControlName="lastName" class="form-control" id="lastName" maxlength="50" >
+            </div>
         </div>
         <div class="row mb-3">
-            <div class="col-md-6"> <label for="birthDate" class="form-label">Birth Date</label> <input type="date"
-                    [(ngModel)]="openAccountObj.birthDate" formControlName="birthDate" class="form-control"
-                    id="birthDate" required> </div>
-            <div class="col-md-6"> <label for="mobile" class="form-label">Mobile</label> <input type="tel"
-                    [(ngModel)]="openAccountObj.mobile" formControlName="mobile" class="form-control" id="mobile"
-                    pattern="[0-9]{10}" required>
+            <div class="col-md-6">
+                <label for="birthDate" class="form-label">Birth Date</label>
+                <input type="date" formControlName="birthDate" class="form-control" id="birthDate">
+            </div>
+            <div class="col-md-6">
+                <label for="mobile" class="form-label">Mobile</label>
+                <input type="tel" formControlName="mobile" class="form-control">
                 <div class="form-text">Enter a 10-digit mobile number.</div>
             </div>
         </div>
         <div class="row mb-3">
-            <div class="col-md-6"> <label for="email" class="form-label">Email</label> <input type="email"
-                    [(ngModel)]="openAccountObj.email" formControlName="email" class="form-control" id="email"
-                    maxlength="100" required> </div>
-            <div class="col-md-6"> <label for="houseNo" class="form-label">House No</label> <input type="text"
-                    [(ngModel)]="openAccountObj.houseNo" formControlName="houseNo" class="form-control" id="houseNo"
-                    required> </div>
+            <div class="col-md-6">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" formControlName="email" class="form-control">
+            </div>
+            <div class="col-md-6">
+                <label for="houseNo" class="form-label">House No</label>
+                <input type="text" formControlName="houseNo" class="form-control" id="houseNo">
+            </div>
         </div>
         <div class="row mb-3">
-            <div class="col-md-12"> <label for="addressLine1" class="form-label">Address Line 1</label> <input
-                    type="text" [(ngModel)]="openAccountObj.addressLine1" formControlName="addressLine1"
-                    class="form-control" id="addressLine1" maxlength="100" required> </div>
+            <div class="col-md-12">
+                <label for="addressLine1" class="form-label">Address Line 1</label>
+                <input type="text" formControlName="addressLine1" class="form-control" id="addressLine1" maxlength="100">
+            </div>
         </div>
         <div class="row mb-3">
-            <div class="col-md-12"> <label for="addressLine2" class="form-label">Address Line 2</label> <input
-                    type="text" [(ngModel)]="openAccountObj.addressLine2" formControlName="addressLine2"
-                    class="form-control" id="addressLine2" maxlength="100"> </div>
+            <div class="col-md-12">
+                <label for="addressLine2" class="form-label">Address Line 2</label>
+                <input type="text" formControlName="addressLine2" class="form-control" id="addressLine2" maxlength="100">
+            </div>
         </div>
         <div class="row mb-3">
-            <div class="col-md-6"> <label for="taluka" class="form-label">Taluka</label> <select class="form-select"
-                    [(ngModel)]="openAccountObj.taluka" formControlName="taluka" id="taluka" required>
+            <div class="col-md-6">
+                <label for="taluka" class="form-label">Taluka</label>
+                <select formControlName="taluka" class="form-select" id="taluka" >
                     <option value="" disabled selected>Select Taluka</option>
                     <option>Latur</option>
                     <option>Ausa</option>
-                </select> </div>
-            <div class="col-md-6"> <label for="city" class="form-label">City</label> <select class="form-select"
-                    [(ngModel)]="openAccountObj.city" formControlName="city" id="city" required>
+                </select>
+            </div>
+            <div class="col-md-6">
+                <label for="city" class="form-label">City</label>
+                <select formControlName="city" class="form-select" id="city" >
                     <option value="" disabled selected>Select City</option>
                     <option>Latur</option>
                     <option>Mumbai</option>
-                </select> </div>
-        </div>
+                </select>
+            </div>
+        </div> 
         <div class="row mb-3">
-            <div class="col-md-6"> <label for="state" class="form-label">State</label> <select class="form-select"
-                    [(ngModel)]="openAccountObj.state" formControlName="state" id="state" required>
+            <div class="col-md-6">
+                <label for="state" class="form-label">State</label>
+                <select formControlName="state" class="form-select" id="state" >
                     <option value="" disabled selected>Select State</option>
                     <option>Maharashtra</option>
                     <option>Rajasthan</option>
-                </select> </div>
-            <div class="col-md-6"> <label for="country" class="form-label">Country</label> <select class="form-select"
-                    [(ngModel)]="openAccountObj.country" formControlName="country" id="country" required>
+                </select>
+            </div>
+            <div class="col-md-6">
+                <label for="country" class="form-label">Country</label>
+                <select formControlName="country" class="form-select" id="country" >
                     <option value="" disabled selected>Select Country</option>
                     <option>India</option>
                     <option>Germany</option>
-                </select> </div>
+                </select>
+            </div>
         </div>
         <div class="row mb-3">
-            <div class="col-md-6"> <label for="pinCode" class="form-label">Pin Code</label> <input type="text"
-                    [(ngModel)]="openAccountObj.pinCode" formControlName="pinCode" class="form-control" id="pinCode"
-                    pattern="[0-9]{6}" minlength="6" maxlength="10" required>
+            <div class="col-md-6">
+                <label for="pinCode" class="form-label">Pin Code</label>
+                <input type="text" formControlName="pinCode" class="form-control" id="pinCode" pattern="[0-9]{6}" minlength="6" maxlength="10" >
                 <div class="form-text">Enter a 6-digit pin code.</div>
             </div>
-            <div class="col-md-6"> <label for="nomineeName" class="form-label">Nominee Name</label> <input type="text"
-                    [(ngModel)]="openAccountObj.nomineeName" formControlName="nomineeName" class="form-control"
-                    id="nomineeName" required> </div>
+            <div class="col-md-6">
+                <label for="nomineeName" class="form-label">Nominee Name</label>
+                <input type="text" formControlName="nomineeName" class="form-control" id="nomineeName" >
+            </div>
         </div>
         <div class="row mb-3">
-            <div class="col-md-6"> <label for="relationWithNominee" class="form-label">Relation With Nominee</label>
-                <select class="form-select" [(ngModel)]="openAccountObj.relationWithNominee"
-                    formControlName="relationWithNominee" id="relationWithNominee" required>
+            <div class="col-md-6">
+                <label for="relationWithNominee" class="form-label">Relation With Nominee</label>
+                <select formControlName="relationWithNominee" class="form-select" id="relationWithNominee" >
                     <option value="" disabled selected>Select Relation</option>
                     <option>Father</option>
                     <option>Mother</option>
@@ -91,24 +107,26 @@
                     <option>Husband</option>
                 </select>
             </div>
-            <div class="col-md-6"> <label for="nomineeDOB" class="form-label">Nominee DOB</label> <input type="date"
-                    [(ngModel)]="openAccountObj.nomineeDOB" formControlName="nomineeDOB" class="form-control"
-                    id="nomineeDOB" required> </div>
+            <div class="col-md-6">
+                <label for="nomineeDOB" class="form-label">Nominee DOB</label>
+                <input type="date" formControlName="nomineeDOB" class="form-control" id="nomineeDOB" >
+            </div>
         </div>
         <div class="row mb-3">
-            <div class="col-md-6"> <label for="accountType" class="form-label">Account Type</label> <select
-                    class="form-select" [(ngModel)]="openAccountObj.accountType" formControlName="accountType"
-                    id="accountType" required>
+            <div class="col-md-6">
+                <label for="accountType" class="form-label">Account Type</label>
+                <select formControlName="accountType" class="form-select" id="accountType" >
                     <option value="" disabled selected>Select Account Type</option>
                     <option>Savings</option>
                     <option>Current</option>
                     <option>Salary</option>
-                </select> 
+                </select>
             </div>
         </div>
         <div class="row mb-3">
-            <div class="col-md-12 d-flex justify-content-center"> <button type="submit" class="btn btn-primary"
-                    (click)="onSubmit()">Submit</button> </div>
+            <div class="col-md-12 d-flex justify-content-center">
+                <button type="submit" class="btn btn-primary" [disabled]="!accountForm.valid">Submit</button>
+            </div>
         </div>
     </form>
 </div>
